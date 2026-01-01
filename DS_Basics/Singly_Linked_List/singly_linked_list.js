@@ -77,6 +77,19 @@ class LinkedList {
     return null
   }
 
+  size() {
+    if (this.head === null) return 0
+
+    let count = 0
+    let current = this.head
+    while (current !== null) {
+      count++
+      current = current.next
+    }
+
+    return count
+  }
+
   // 0  1  2  3  4
   // 1->2->4->5->null
   insertAt(data, index) { // 100, 1
@@ -167,14 +180,17 @@ class LinkedList {
   }
 }
 
-const list = new LinkedList();
-list.append(1)
-list.append(2)
-list.append(4)
-list.append(5)
-list.prepend(0)
-list.insertAt('A',5) // insert at index position
-list.insertAfter('B','A')
-list.insertBefore('X','A')
-list.printList()
-console.log(list.find('B'))
+const linkedList = new LinkedList();
+export { linkedList } 
+
+// const list = new LinkedList();
+// list.append(1)
+// list.append(2)
+// list.append(4)
+// list.append(5)
+// list.prepend(0)
+// list.insertAt('A',5) // insert at index position
+// list.insertAfter('B','A')
+// list.insertBefore('X','A')
+// // list.printList()
+// console.log(list.head)
